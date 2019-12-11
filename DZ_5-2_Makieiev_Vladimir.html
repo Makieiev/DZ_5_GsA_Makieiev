@@ -1,0 +1,54 @@
+<!-- Доработайте пример 004_Attr_Tech.html таким образом, чтобы при наведении на span элементы, подсказка сплыва под ними, а не в модальном окне. Используйте addEventListener. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашнее задание 5-2 по JsA Макеев Владимир</title>
+    <script>
+        window.onload = function() {
+            let mainDiv = document.querySelector(".mainDiv");
+            let ref = document.querySelector(".ref");
+            let disconnect = document.querySelector(".disconnect");
+            let activate = document.querySelector(".activate");
+                ref.addEventListener("click", View);
+                mainDiv.style.visibility = "hidden";
+                function View(even) {
+                    if (mainDiv.style.visibility === "hidden") {
+                        even.preventDefault();
+                        mainDiv.style.visibility = "visible";
+                        return false;
+                    } else {
+                        even.preventDefault();
+                        mainDiv.style.visibility = "hidden";
+                        return false;
+                    }
+                }
+            if (disconnect) {
+                disconnect.addEventListener("click", removeRefClick);
+                function removeRefClick() {
+                    ref.removeEventListener("click", View);
+                }
+            }
+            if (activate) {
+                activate.addEventListener("click", viewNew);
+                function viewNew() {
+                    ref.addEventListener("click", View);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<a class="ref" href="#" >
+    Ссылка на текст<br/><br/>
+    <div class="mainDiv">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div><br/><br/>
+</a>
+<button class="disconnect" style="background-color: #F08080">ОТКЛЮЧИТЬ ССЫЛКУ</button><br/><br/>
+<button class="activate" style="background-color: #9ACD32">АКТИВИРОВАТЬ ССЫЛКУ</button>
+</body>
+</html>

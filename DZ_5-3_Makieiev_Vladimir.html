@@ -1,0 +1,35 @@
+<!--Доработайте пример 004_Attr_Tech.html таким образом, чтобы при наведении на span элементы, подсказка сплыва под ними, а не в модальном окне. Используйте addEventListener -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Домашнее задание по JsA Макеев Владимир</title>
+</head>
+<style type="text/css">
+</style>
+<script>
+    window.onload = function () {
+        var mainDiv = document.getElementById("div");
+        var myText = document.getElementById("par");
+        mainDiv.addEventListener('mouseover', onmouseover);
+        mainDiv.onmouseover = function(even) {
+            let mark = even && even.mark || window.event.srcElement;
+            let flag = mark.getAttribute('data-tooltip');
+            if (!flag) {
+                return
+            }
+                par.style.marginLeft = String(mark.getBoundingClientRect().left - 8) + "px";
+                myText.classList.remove("hidd");
+                myText.innerHTML = flag;
+        };
+      }
+</script>
+<body>
+<div id="div">
+    <span data-tooltip="НАВЕДИТЕ">НАВЕДИТЕ</span>
+    <span data-tooltip="ДЛЯ">ДЛЯ</span>
+    <span data-tooltip="ПОДСКАЗКИ">ПОДСКАЗКИ</span>
+    <p id="par" class="hidd">Наведите курсором на слова в первом абзаце!</p>
+</div>
+</body>
+</html>

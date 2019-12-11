@@ -1,0 +1,80 @@
+<!-- Создайте 5 блоков с текстом. Добавьте в каждый из блоков кнопку для его удаления. Используйте только один обработчик.-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Домашнее задание 5-1 по JsA Макеев Владимир</title>
+	<style type="text/css">
+		body {
+			display: flex;
+			/*flex-direction: row;*/
+			padding: 5px;
+		}
+		div input {
+			height: 40px;
+			background-color: #66CDAA;
+		}
+		div {
+			margin: 5px;
+		}
+		div div{
+			border: 4px solid #B22222;
+			padding: 5px;
+			margin-left: 20px;
+			flex-direction: column;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function() {
+			var myDiv = document.getElementById('myDiv');
+			myDiv.addEventListener("click", clickDiv);
+			function clickDiv(e) {
+				var frame = e.target;
+					if(frame.tagName == "INPUT") {
+						console.log(frame.parentNode);
+						myDiv.removeChild(frame.parentNode);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="myDiv">
+		<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>
+		<input type="button" name="button" value="Удалить 1 параграф "></div>
+		<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>
+		<input type="button" name="button" value="Удалить 2 параграф "></div>
+		<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>
+		<input type="button" name="button" value="Удалить 3 параграф "></div>
+		<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>
+		<input type="button" name="button" value="Удалить 4 параграф "></div>
+		<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br/><br/>
+		<input type="button" name="button" value="Удалить 5 параграф "></div>
+	</div>
+</body>
+</html>
